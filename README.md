@@ -4,6 +4,11 @@ GPTO is a CLI utility to be used like grep or sed, except the instructions are
 plain English instructions, and those instructions are sent to the gpt-3 server
 along with your data, which you pipe in via the CLI.
 
+Who needs regular expressions when you can just ask what you want in english?*
+
+\* Other than people who need speed, accuracy, cost-effectiveness, security,
+etc.
+
 ## Example:
 
 ```
@@ -32,6 +37,8 @@ Note that only those dates after 2000 are modified.
 
 `gpto` expects a .env file defined with your api key present in the cwd, as defined in the
 documentation for the [gpt-3 golang library](https://github.com/PullRequestInc/go-gpt3).
+
+After logging in, you can get your API key at [this page](https://platform.openai.com/account/api-keys)
 
 All commands will use your account via the API key, and costs will be accrued as expected.
 The maximum number of tokens you'll receive in a reply is slightly more than twice the total
