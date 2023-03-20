@@ -1,10 +1,10 @@
-# Who needs regular expressions when you can just ask what you want in english?
+# Who needs regular expressions when you can say it in plain english?
 
 `gpt-do` is a CLI utility to which you can pass data, tell gpt what you'd like done
-with it, and be returned the tweaked data, much like grep or sed.
+with it, and be returned the tweaked data, feeling much like grep or sed.
 
-The instructions are plain English instructions, and are sent to the openapi server
-along with your data, which you pipe in via the CLI.
+The instructions are in plain English, and are sent to the openapi server along with
+your data, which you pipe in via the CLI.
 
 ## Example:
 
