@@ -37,7 +37,7 @@ Note that only those dates after 2000 are modified.
 
 ## Requirements
 
-`gpto` expects a file named `.env` containing your openapi api key to be either in your home
+`gpt` expects a file named `.env` containing your openapi api key to be either in your home
 directory or in the current working directly; alternatively, you can have an environment variable
 containing your API key called `API_KEY`. More info is defined in the documentation for the [gpt-3 golang library](https://github.com/PullRequestInc/go-gpt3).
 
@@ -65,5 +65,5 @@ Hell no. But it is neat.
 I made this because people are asking gpt to write code to do things, instead of just asking
 gpt to do the things that need done.
 
-The future will be you asking your computer to do things in natural english. `gpto` is meant to
+The future will be you asking your computer to do things in natural english. GPT-do is meant to
 be a first exploration of that.
