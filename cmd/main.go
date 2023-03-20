@@ -4,14 +4,31 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"os/user"
         "io"
 
 	"github.com/PullRequestInc/go-gpt3"
 	"github.com/joho/godotenv"
 )
 
+func getUserHomeDirectory() string {
+	currentUser, err := user.Current()
+	if err != nil {
+	    fmt.Println("Cannot get the current user to grab their home directory path:", err)
+	    return ""
+	}
+    
+	return currentUser.HomeDir
+}
+
+func getEnvDirectories() []string {
+	homeEnv := fmt.Sprintf("%s/.env", getUserHomeDirectory())
+	cwdEnv := ".env"
+	return []string{homeEnv,cwdEnv}
+}
+
 func main() {
-	godotenv.Load()
+	godotenv.Load(getEnvDirectories()...)
 
 	apiKey := os.Getenv("API_KEY")
 	if apiKey == "" {
@@ -35,7 +52,7 @@ func main() {
 
 	data := string(stdin)
 
-        formattedMessage := fmt.Sprintf("%s for the following text: %s", prompt, data)
+        formattedMessage := fmt.Sprintf("%s for the following text, please and thank you: %s", prompt, data)
         msg := gpt3.ChatCompletionRequestMessage {
                 Role: "user",
                 Content: formattedMessage,

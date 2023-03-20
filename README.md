@@ -1,6 +1,6 @@
-# GPTO
+# GPT-do
 
-GPTO is a CLI utility to be used like grep or sed, except the instructions are
+GPT-do is a CLI utility to be used like grep or sed, except the instructions are
 plain English instructions, and those instructions are sent to the gpt-3 server
 along with your data, which you pipe in via the CLI.
 
@@ -11,6 +11,8 @@ etc.
 
 ## Example:
 
+GPT-do is invoked via the `gpt` command.
+
 ```
 $ cat test/dates.txt 
 Oct
@@ -20,7 +22,7 @@ bazinga, feb 10 2010, yes
 10/16/2020
 January 1st, 2001
 
-$ cat test/dates.txt | ./gpto "increment every date that's after the year 2000 by one month" 
+$ cat test/dates.txt | ./gpt "increment every date that's after the year 2000 by one month" 
 
 
 Oct
@@ -35,9 +37,11 @@ Note that only those dates after 2000 are modified.
 
 ## Requirements
 
-`gpto` expects a .env file defined with your api key present in the cwd, as defined in the
-documentation for the [gpt-3 golang library](https://github.com/PullRequestInc/go-gpt3).
+`gpto` expects a file named `.env` containing your openapi api key to be either in your home
+directory or in the current working directly; alternatively, you can have an environment variable
+containing your API key called `API_KEY`. More info is defined in the documentation for the [gpt-3 golang library](https://github.com/PullRequestInc/go-gpt3).
 
+If you need an openapi api key, you'll want to create an account at https://platform.openai.com.
 After logging in, you can get your API key at [this page](https://platform.openai.com/account/api-keys)
 
 All commands will use your account via the API key, and costs will be accrued as expected.
@@ -52,7 +56,7 @@ Is this:
 - safe to use with my data?
 - cost-effecient?
 - better than writing a regex, using sed, etc.?
-- does it work every time, correctly, predictably, and quickly?
+- gauranteed to work correctly, predictably, and quickly?
 
 Hell no. But it is neat.
 
