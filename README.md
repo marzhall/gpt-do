@@ -1,13 +1,10 @@
-# GPT-do
+# Who needs regular expressions when you can just ask what you want in english?
 
-GPT-do is a CLI utility to be used like grep or sed, except the instructions are
-plain English instructions, and those instructions are sent to the gpt-3 server
+GPT-do is a CLI utility to which you can pass data, tell gpt what you'd like done
+with it, and be returned the tweaked data, much like grep or sed.
+
+The instructions are plain English instructions, and are sent to the openapi server
 along with your data, which you pipe in via the CLI.
-
-Who needs regular expressions when you can just ask what you want in english?*
-
-\* Other than people who need speed, accuracy, cost-effectiveness, security,
-etc.
 
 ## Example:
 
@@ -35,21 +32,6 @@ February 1st, 2001
 
 Note that only those dates after 2000 are modified.
 
-## Requirements
-
-`gpt` expects a file named `.env` containing your openapi api key to be either in your home
-directory or in the current working directly; alternatively, you can have an environment variable
-containing your API key called `API_KEY`. More info is defined in the documentation for the [gpt-3 golang library](https://github.com/PullRequestInc/go-gpt3).
-
-If you need an openapi api key, you'll want to create an account at https://platform.openai.com.
-After logging in, you can get your API key at [this page](https://platform.openai.com/account/api-keys)
-
-All commands will use your account via the API key, and costs will be accrued as expected.
-The maximum number of tokens you'll receive in a reply is slightly more than twice the total
-length of your instructions + the amount of data you sent. In the example, it's 2x the length
-of dates.txt and the instruction " increment every date that's after the year 2000 by one month"
-combined.
-
 ## Notes
 
 Is this:
@@ -62,8 +44,34 @@ Hell no. But it is neat.
 
 ## Far-out notes, man
 
-I made this because people are asking gpt to write code to do things, instead of just asking
-gpt to do the things that need done.
+I made this because people are asking gpt to write code that does things instead of just asking
+gpt to do things.
 
 The future will be you asking your computer to do things in natural english. GPT-do is meant to
 be a first exploration of that.
+
+## Requirements
+
+In order to function, `gpt` needs you to have an openapi API key so it can talk to the
+gpt 3.5 chat API.
+
+If you need an openapi api key, you'll want to create an account at https://platform.openai.com.
+After logging in, you can get your API key at [this page](https://platform.openai.com/account/api-keys)
+
+You can do this a few ways. One is to just set your API key as an
+environment variable in your shell: `export API_KEY=<my_key>`. From then on, running
+`gpt` will use that env var.
+
+Alternatively, you can use a file named `.env` containing your openapi api key, and place it
+either in your home directory or in the current directory you're running `gpt` in. More info
+for using an env file is in the documentation for the [gpt-3 golang library](https://github.com/PullRequestInc/go-gpt3).
+
+## Extra Openapi-specific notes
+
+The command uses gpt-3.5, as that's the best api available at the moment.
+
+All commands will use your account via the API key, and costs will be accrued as expected.
+The maximum number of tokens you'll receive in a reply is slightly more than twice the total
+length of your instructions + the amount of data you sent. In the example, it's 2x the length
+of dates.txt and the instruction " increment every date that's after the year 2000 by one month"
+combined.

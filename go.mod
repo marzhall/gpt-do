@@ -1,4 +1,4 @@
-module gtdo
+module gpt-do
 
 go 1.19
 

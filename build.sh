@@ -1,3 +1,3 @@
 #!/bin/bash
 
-go build -o gpto cmd/main.go
+go build -o gpt cmd/main.go
