@@ -1,5 +1,4 @@
-module gpt-do
-
+module github.com/marzhall/gpt-do
 go 1.19
 
 require (
