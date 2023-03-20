@@ -54,13 +54,13 @@ In order to function, `gpt-do` needs you to have an openapi API key so it can ta
 gpt 3.5 chat API.
 
 If you need an openapi api key, you'll want to create an account at https://platform.openai.com.
-After logging in, you can get your API key at [this page](https://platform.openai.com/account/api-keys)
+After logging in, you can get your API key at [this page](https://platform.openai.com/account/api-keys).
 
-You can do this a few ways. One is to just set your API key as an
-environment variable in your shell: `export API_KEY=<my_key>`. From then on, running
-`gpt-do` will use that env var.
+Once you have your API key, gpt-go needs to be able to find it. This can be done a few ways.
+One is to just set your API key as an environment variable in your shell: `export API_KEY=<my_key>`.
+From then on, `gpt-do` will pick up that environment variabe when it runs.
 
-Alternatively, you can use a file named `.env` containing your openapi api key, and place it
+Alternatively, you can create a file named `.env` containing your openapi api key, and place it
 either in your home directory or in the current directory you're running `gpt-do` in. More info
 for using an env file is in the documentation for the [gpt-3 golang library](https://github.com/PullRequestInc/go-gpt3).
 
