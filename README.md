@@ -45,6 +45,7 @@ Is this:
 - safe to use with my data?
 - cost-effecient?
 - better than writing a regex, using sed, etc.?
+- does it work every time, correctly, predictably, and quickly?
 
 Hell no. But it is neat.
 
