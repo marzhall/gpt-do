@@ -1,4 +1,4 @@
-# Who needs regular expressions when you can say it in plain english?
+# Who needs code when you can say it in plain english?
 
 `gpt-do` is a CLI utility to which you can pass data, tell gpt what you'd like done
 with it, and be returned the tweaked data, feeling much like grep or sed.
@@ -19,7 +19,7 @@ bazinga, feb 10 2010, yes
 10/16/2020
 January 1st, 2001
 
-$ cat test/dates.txt | ./gpt-do "increment every date that's after the year 2000 by one month" 
+$ cat test/dates.txt | gpt-do "increment every date that's after the year 2000 by one month" 
 
 
 Oct
