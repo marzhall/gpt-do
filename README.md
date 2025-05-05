@@ -36,9 +36,9 @@ Note that, as asked, only those dates after 2000 are modified.
 
 Is this:
 - safe to use with my data?
-- cost-effecient?
+- cost-efficient?
 - better than writing a regex, using sed, etc.?
-- gauranteed to work correctly, predictably, and quickly?
+- guaranteed to work correctly, predictably, and quickly?
 
 Hell no. But it is neat.
 
